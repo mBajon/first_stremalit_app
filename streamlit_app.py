@@ -13,5 +13,6 @@ streamlit.text('🥗 Kale, Spinach & Rocket smoothie')
 streamlit.text('🐔 Hard boiled free range egg')  
 streamlit.text('🥑🍞 Avocado toast')  
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
-streamlit.multiselect('Pick some fruits',list(fruit_list.index),['Avocado','Strawberries'])
-streamlit.dataframe(fruit_list)
+fruits_selected = streamlit.multiselect('Pick some fruits',list(fruit_list.index),['Avocado','Strawberries'])
+fruits_to_show = fruit_list.loc[fruits_selected]
+streamlit.dataframe(fruits_to_show)
